@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cAa-JW-My4">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="NW1-wQ-HqB">
+            <objects>
+                <navigationController id="cAa-JW-My4" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dzx-Oi-I0A">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="3lt-ed-Cz9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hHp-p8-gHX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="97" y="206"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SeamlessSlideUpScrollViewSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="SvZ-Ca-T8g">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FA6-He-gFn">
+                                <rect key="frame" x="130" y="339" width="114" height="53"/>
+                                <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="S5k-3w-FBd"/>
+                                    <constraint firstAttribute="width" constant="114" id="xId-ok-5b0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <state key="normal" title="Slide Up">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="toggleSlideUpView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kpQ-dG-Wu3"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MN9-w4-aEh" customClass="SeamlessSlideUpView" customModule="SeamlessSlideUpScrollView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="topWindowHeight">
+                                        <real key="value" value="200"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="FA6-He-gFn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="0Ri-hy-WpO"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="MN9-w4-aEh" secondAttribute="bottom" id="8Up-W7-4Xm"/>
+                            <constraint firstItem="MN9-w4-aEh" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="FnU-aq-tJo"/>
+                            <constraint firstItem="MN9-w4-aEh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KJ7-7w-L11"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="SvZ-Ca-T8g" secondAttribute="bottom" id="Lx0-Y0-QJ4"/>
+                            <constraint firstItem="FA6-He-gFn" firstAttribute="centerX" secondItem="SvZ-Ca-T8g" secondAttribute="centerX" id="Sa4-cj-eba"/>
+                            <constraint firstItem="SvZ-Ca-T8g" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="WQ8-7M-KQv"/>
+                            <constraint firstItem="FA6-He-gFn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Whq-QR-kli"/>
+                            <constraint firstAttribute="trailing" secondItem="MN9-w4-aEh" secondAttribute="trailing" id="Yfg-Jq-8Vq"/>
+                            <constraint firstItem="SvZ-Ca-T8g" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Zxd-hQ-CRJ"/>
+                            <constraint firstAttribute="trailing" secondItem="SvZ-Ca-T8g" secondAttribute="trailing" id="aii-Ka-HY1"/>
+                            <constraint firstItem="FA6-He-gFn" firstAttribute="centerY" secondItem="SvZ-Ca-T8g" secondAttribute="centerY" id="ueb-Sr-xn5"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="0Ri-hy-WpO"/>
+                                <exclude reference="Whq-QR-kli"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="d6D-v9-0hb"/>
+                    <connections>
+                        <outlet property="bgBottomConstraint" destination="Lx0-Y0-QJ4" id="MbG-b4-hf9"/>
+                        <outlet property="button" destination="FA6-He-gFn" id="QPy-PY-rov"/>
+                        <outlet property="slideUpView" destination="MN9-w4-aEh" id="AEa-Jy-npy"/>
+                        <outlet property="tableView" destination="aHV-h3-gyG" id="uzM-R5-BiO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="aHV-h3-gyG" customClass="SeamlessSlideUpTableView" customModule="SeamlessSlideUpScrollView">
+                    <rect key="frame" x="0.0" y="0.0" width="368" height="518"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <prototypes>
+                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="nd0-cq-5Sz">
+                            <rect key="frame" x="0.0" y="28" width="368" height="60"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nd0-cq-5Sz" id="nkC-i5-SSd">
+                                <rect key="frame" x="0.0" y="0.0" width="368" height="59.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHB-rC-ibA">
+                                        <rect key="frame" x="24" y="19" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hHB-rC-ibA" firstAttribute="centerY" secondItem="nkC-i5-SSd" secondAttribute="centerY" id="2de-0y-94h"/>
+                                    <constraint firstItem="hHB-rC-ibA" firstAttribute="leading" secondItem="nkC-i5-SSd" secondAttribute="leadingMargin" constant="16" id="VCe-6N-s84"/>
+                                </constraints>
+                            </tableViewCellContentView>
+                        </tableViewCell>
+                    </prototypes>
+                </tableView>
+            </objects>
+            <point key="canvasLocation" x="587.5" y="205.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bg" width="360" height="480"/>
+    </resources>
+</document>
