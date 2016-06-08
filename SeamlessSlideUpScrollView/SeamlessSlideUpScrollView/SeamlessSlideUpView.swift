@@ -14,6 +14,10 @@ public class SeamlessSlideUpView: UIView {
         didSet { self.targetView = tableView as? SeamlessSlideUpScrollViewType }
     }
     
+    @IBOutlet weak public var scrollView: SeamlessSlideUpScrollView? = nil {
+        didSet { self.targetView = scrollView as? SeamlessSlideUpScrollViewType }
+    }
+    
     @IBOutlet public var delegate: SeamlessSlideUpViewDelegate? = nil
 
     @IBInspectable public var topWindowHeight: CGFloat = 60

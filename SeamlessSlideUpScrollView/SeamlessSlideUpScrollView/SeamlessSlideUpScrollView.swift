@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SeamlessSlideUpScrollView: UIScrollView, SeamlessSlideUpScrollViewType {
+public class SeamlessSlideUpScrollView: UIScrollView, SeamlessSlideUpScrollViewType {
     
     var translationSize: CGSize = CGSizeZero
     var ignoreContentOffsetChange: Bool = false
