@@ -10,13 +10,17 @@ import UIKit
 
 public class SeamlessSlideUpView: UIView {
     
-    @IBOutlet public var scrollView: SeamlessSlideUpScrollViewType? = nil {
-        didSet { self.setupScrollView() }
+    @IBOutlet weak public var tableView: SeamlessSlideUpTableView? = nil {
+        didSet { self.targetView = tableView as? SeamlessSlideUpScrollViewType }
     }
     
+    @IBOutlet public var delegate: SeamlessSlideUpViewDelegate? = nil
+
     @IBInspectable public var topWindowHeight: CGFloat = 60
     
-    public var delegate: SeamlessSlideUpViewDelegate? = nil
+    private weak var targetView: SeamlessSlideUpScrollViewType? = nil {
+        didSet { self.setupScrollView() }
+    }
     
     private var topConstraint: NSLayoutConstraint!
     private let dragGestureRecognizer = VerticalDragGestureRecognizer()
@@ -33,9 +37,9 @@ public class SeamlessSlideUpView: UIView {
     }
     
     public func show(expandFull expandFull: Bool) {
-        guard let scrollView = self.scrollView else { return }
+        guard let targetView = self.targetView else { return }
 
-        scrollView.pauseScroll = true
+        targetView.pauseScroll = true
         
         let destination = expandFull ? 0 : topWindowHeight
         let scrollViewPosition = self.scrollViewPosition
@@ -66,7 +70,7 @@ public class SeamlessSlideUpView: UIView {
     }
     
     public func hide() {
-        guard self.scrollView != nil else { return }
+        guard self.targetView != nil else { return }
 
         if self.hidden { return }
         
@@ -103,25 +107,32 @@ extension SeamlessSlideUpView {
     }
 
     private func setupScrollView() {
-        guard let scrollView = self.scrollView as? UIView else { return }
+        guard let targetView = self.targetView else { return }
+        guard let view = self.targetView as? UIView else { return }
         
-        scrollView.removeFromSuperview()
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(scrollView)
-        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[scrollView]|", options: [], metrics: nil , views: ["scrollView": scrollView]))
+        view.removeFromSuperview()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(view)
+        self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[scrollView]|", options: [], metrics: nil , views: ["scrollView": view]))
 
-        let topConstraint = NSLayoutConstraint(item: scrollView, attribute: NSLayoutAttribute.Top,
+        let topConstraint = NSLayoutConstraint(item: targetView, attribute: NSLayoutAttribute.Top,
                                                 relatedBy: NSLayoutRelation.Equal,
                                                 toItem: self, attribute: NSLayoutAttribute.Top,
                                                 multiplier: 1, constant: 0)
-        let bottomConstraint = NSLayoutConstraint(item: scrollView, attribute: NSLayoutAttribute.Bottom,
+        let bottomConstraint = NSLayoutConstraint(item: targetView, attribute: NSLayoutAttribute.Bottom,
                                                   relatedBy: NSLayoutRelation.Equal,
                                                   toItem: self, attribute: NSLayoutAttribute.Bottom,
                                                   multiplier: 1, constant: 0)
         self.addConstraints([topConstraint, bottomConstraint])
-        
+
         self.topConstraint = topConstraint
-        self.dragGestureRecognizer.targetSubview = scrollView
+        self.dragGestureRecognizer.targetSubview = view
+        
+        targetView.contentOffsetYChangedCallback = { [weak self] offsetY in
+            if offsetY < -40 {
+                self?.show(expandFull: false)
+            }
+        }
     }
     
     override public func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
@@ -130,19 +141,19 @@ extension SeamlessSlideUpView {
     }
     
     private func moveScrollView(amount: CGFloat) {
-        guard let scrollView = self.scrollView else { return }
+        guard let targetView = self.targetView else { return }
 
         let y = dragOriginY + amount
         if y <= 0 {
             if self.scrollViewPosition != 0 {
                 self.topConstraint.constant = 0
-                scrollView.layoutSuperviewIfNeeded()
+                targetView.layoutSuperviewIfNeeded()
             }
-            scrollView.pauseScroll = false
+            targetView.pauseScroll = false
         } else {
-            scrollView.pauseScroll = true
+            targetView.pauseScroll = true
             self.topConstraint.constant = max(0, y)
-            scrollView.layoutSuperviewIfNeeded()
+            targetView.layoutSuperviewIfNeeded()
         }
         
         delegate?.slideUpViewDidDrag?(self, height: self.bounds.height - self.topConstraint.constant)
@@ -157,10 +168,10 @@ extension SeamlessSlideUpView {
     }
     
     private func restoreScrollViewPosition(velocity velocity: CGFloat = 0) {
-        guard let scrollView = self.scrollView else { return }
+        guard let targetView = self.targetView else { return }
 
-        let y = self.scrollViewPosition - scrollView.contentOffset.y
-        scrollView.resetScrollTranslation()
+        let y = self.scrollViewPosition - targetView.contentOffset.y
+        targetView.resetScrollTranslation()
         
         if y <= 0 {
             return
@@ -189,8 +200,8 @@ extension SeamlessSlideUpView: UIGestureRecognizerDelegate {
 
 extension SeamlessSlideUpView: VerticalDragGestureRecognizerDelegate {
     func verticarDragBegan() {
-        guard let scrollView = self.scrollView else { return }
-        self.dragOriginY = self.scrollViewPosition - scrollView.contentOffset.y
+        guard let targetView = self.targetView else { return }
+        self.dragOriginY = self.scrollViewPosition - targetView.contentOffset.y
     }
     
     func verticalDragged(origin origin: CGPoint, moved: CGSize) {

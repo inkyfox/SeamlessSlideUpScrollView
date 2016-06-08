@@ -17,14 +17,6 @@ protocol VerticalDragGestureRecognizerDelegate {
     func verticalDragFinished(origin origin: CGPoint, moved: CGSize, lastMove: CGSize, duration: NSTimeInterval)
 }
 
-// make them optional functions
-extension VerticalDragGestureRecognizerDelegate {
-    func verticarDragBegan() {}
-    func verticalDragged(origin origin: CGPoint, moved: CGSize) {}
-    func verticalDragCancelled() {}
-    func verticalDragFinished(origin origin: CGPoint, moved: CGSize, lastMove: CGSize, duration: NSTimeInterval) {}
-}
-
 class VerticalDragGestureRecognizer: UIGestureRecognizer {
     
     var touchSlop: CGFloat = 20 {  didSet { touchSlopSquare = touchSlop * touchSlop } }

@@ -1,18 +1,18 @@
 //
-//  SeamlessSlideUpTableView.swift
+//  SeamlessSlideUpScrollView.swift
 //  SeamlessSlideUpScrollView
 //
-//  Created by indy on 2016. 6. 7..
+//  Created by indy on 2016. 6. 8..
 //  Copyright © 2016년 Gen X Hippies Company. All rights reserved.
 //
 
 import UIKit
 
-public class SeamlessSlideUpTableView: UITableView, SeamlessSlideUpScrollViewType {
+class SeamlessSlideUpScrollView: UIScrollView, SeamlessSlideUpScrollViewType {
     
     var translationSize: CGSize = CGSizeZero
     var ignoreContentOffsetChange: Bool = false
-
+    
     private var originalContentOffset: CGPoint = CGPointZero
 
     override public var contentOffset: CGPoint {

@@ -6,12 +6,33 @@
 //  Copyright © 2016년 Gen X Hippies Company. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-@objc public protocol SeamlessSlideUpScrollViewType {
+protocol SeamlessSlideUpScrollViewType: class {
     var contentOffset: CGPoint { get }
+    var contentOffsetYChangedCallback: (CGFloat -> Void)? { get set }
     var pauseScroll: Bool { get set }
+    
+    var translationSize: CGSize { get set }
+    var ignoreContentOffsetChange: Bool { get set }
+    
     func resetScrollTranslation()
-    func layoutSuperviewIfNeeded()
-    func layoutSuperviewIfNeeded(superview: UIView)
+    func layoutSuperviewIfNeeded() 
+}
+
+extension SeamlessSlideUpScrollViewType where Self: UIScrollView {
+    func resetScrollTranslation() {
+        self.translationSize = CGSizeZero
+    }
+    
+    func layoutSuperviewIfNeeded() {
+        guard let superview = self.superview else { return }
+        layoutSuperviewIfNeeded(superview)
+    }
+    
+    func layoutSuperviewIfNeeded(superview: UIView) {
+        self.ignoreContentOffsetChange = true
+        superview.layoutIfNeeded()
+        self.ignoreContentOffsetChange = false
+    }
 }

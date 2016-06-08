@@ -13,6 +13,7 @@
 		A9894F011D070C0C00D80F68 /* SeamlessSlideUpScrollViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9894F001D070C0C00D80F68 /* SeamlessSlideUpScrollViewType.swift */; };
 		A9894F031D07193600D80F68 /* VerticalDragGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9894F021D07193600D80F68 /* VerticalDragGestureRecognizer.swift */; };
 		A9894F051D0725DB00D80F68 /* SeamlessSlideUpViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9894F041D0725DB00D80F68 /* SeamlessSlideUpViewDelegate.swift */; };
+		A9894F101D07AA9C00D80F68 /* SeamlessSlideUpScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9894F0F1D07AA9C00D80F68 /* SeamlessSlideUpScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A9894F001D070C0C00D80F68 /* SeamlessSlideUpScrollViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeamlessSlideUpScrollViewType.swift; sourceTree = "<group>"; };
 		A9894F021D07193600D80F68 /* VerticalDragGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalDragGestureRecognizer.swift; sourceTree = "<group>"; };
 		A9894F041D0725DB00D80F68 /* SeamlessSlideUpViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeamlessSlideUpViewDelegate.swift; sourceTree = "<group>"; };
+		A9894F0F1D07AA9C00D80F68 /* SeamlessSlideUpScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeamlessSlideUpScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				A9894EFE1D070B8800D80F68 /* SeamlessSlideUpView.swift */,
 				A9894F001D070C0C00D80F68 /* SeamlessSlideUpScrollViewType.swift */,
 				A9894EFA1D06D31400D80F68 /* SeamlessSlideUpTableView.swift */,
+				A9894F0F1D07AA9C00D80F68 /* SeamlessSlideUpScrollView.swift */,
 				A9894F021D07193600D80F68 /* VerticalDragGestureRecognizer.swift */,
 			);
 			path = SeamlessSlideUpScrollView;
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9894EFF1D070B8800D80F68 /* SeamlessSlideUpView.swift in Sources */,
+				A9894F101D07AA9C00D80F68 /* SeamlessSlideUpScrollView.swift in Sources */,
 				A9894F031D07193600D80F68 /* VerticalDragGestureRecognizer.swift in Sources */,
 				A9894F051D0725DB00D80F68 /* SeamlessSlideUpViewDelegate.swift in Sources */,
 				A9894F011D070C0C00D80F68 /* SeamlessSlideUpScrollViewType.swift in Sources */,
@@ -301,6 +305,7 @@
 				A9894EF91D06D2CC00D80F68 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

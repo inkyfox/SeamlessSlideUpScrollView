@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="97" y="206"/>
         </scene>
-        <!--View Controller-->
+        <!--Seamless Slide-Up ScrollView-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="SeamlessSlideUpScrollViewSample" customModuleProvider="target" sceneMemberID="viewController">
@@ -61,6 +61,9 @@
                                         <real key="value" value="200"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="tableView" destination="aHV-h3-gyG" id="Hwn-mF-Jax"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -85,7 +88,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="d6D-v9-0hb"/>
+                    <navigationItem key="navigationItem" title="Seamless Slide-Up ScrollView" id="d6D-v9-0hb"/>
                     <connections>
                         <outlet property="bgBottomConstraint" destination="Lx0-Y0-QJ4" id="MbG-b4-hf9"/>
                         <outlet property="button" destination="FA6-He-gFn" id="QPy-PY-rov"/>
@@ -103,7 +106,7 @@
                             <rect key="frame" x="0.0" y="28" width="368" height="60"/>
                             <autoresizingMask key="autoresizingMask"/>
                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nd0-cq-5Sz" id="nkC-i5-SSd">
-                                <rect key="frame" x="0.0" y="0.0" width="368" height="59.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="368" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHB-rC-ibA">
