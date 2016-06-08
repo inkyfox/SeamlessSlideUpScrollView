@@ -32,6 +32,7 @@ class VerticalDragGestureRecognizer: UIGestureRecognizer {
     private var dragging: Bool = false
     private var prevMoved: CGSize = CGSizeZero
     private var prevTimestamp: NSTimeInterval = 0
+    private var lastMove: CGSize = CGSizeZero
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent) {
         super.touchesBegan(touches, withEvent: event)
@@ -121,7 +122,7 @@ extension VerticalDragGestureRecognizer {
     private func dragDidChange(moved: CGSize) {
         if dragging {
             self.state = .Changed
-            
+            lastMove = CGSizeMake(moved.width - prevMoved.width, moved.height - prevMoved.height)
             prevMoved = moved
             prevTimestamp = NSDate().timeIntervalSince1970
             
@@ -144,7 +145,7 @@ extension VerticalDragGestureRecognizer {
         if dragging {
             dragDelegate?.verticalDragFinished(origin: firstTouch,
                                                moved: moved,
-                                               lastMove: CGSizeMake(moved.width - prevMoved.width, moved.height - prevMoved.height),
+                                               lastMove: lastMove,
                                                duration: NSDate().timeIntervalSince1970 - prevTimestamp)
             dragging = false
         }
