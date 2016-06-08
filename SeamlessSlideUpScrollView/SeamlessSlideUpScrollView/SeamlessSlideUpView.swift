@@ -40,7 +40,7 @@ public class SeamlessSlideUpView: UIView {
         self.buildLayout()
     }
     
-    public func show(expandFull expandFull: Bool) {
+    public func show(expandFull expandFull: Bool = false) {
         guard let targetView = self.targetView else { return }
 
         targetView.pauseScroll = true
