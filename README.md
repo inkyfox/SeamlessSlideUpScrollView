@@ -78,6 +78,10 @@ pod 'SeamlessSlideUpScrollView' => '~>1'
 github "inkyfox/SeamlessSlideUpScrollView"
 ```
 
+## Author
+
+[Yongha Yoo](http://inkyfox.oo-v.com)
+
 ## License
 
 MIT
