@@ -13,6 +13,7 @@
 		A96C2A661DB7375400529407 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96C2A621DB7375400529407 /* ViewController.swift */; };
 		A96C2A6B1DB7375B00529407 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A96C2A671DB7375B00529407 /* LaunchScreen.storyboard */; };
 		A96C2A6C1DB7375B00529407 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A96C2A691DB7375B00529407 /* Main.storyboard */; };
+		A98B722A1DB761A1008E3771 /* SeamlessSlideUpScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = A98B72281DB761A1008E3771 /* SeamlessSlideUpScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +38,9 @@
 		A96C2A681DB7375B00529407 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SeamlessSlideUpScrollViewDemo/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		A96C2A6A1DB7375B00529407 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SeamlessSlideUpScrollViewDemo/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		A9894EAF1D06CEE500D80F68 /* SeamlessSlideUpScrollViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeamlessSlideUpScrollViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A98B72261DB761A1008E3771 /* SeamlessSlideUpScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SeamlessSlideUpScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A98B72281DB761A1008E3771 /* SeamlessSlideUpScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeamlessSlideUpScrollView.h; sourceTree = "<group>"; };
+		A98B72291DB761A1008E3771 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABF34FD88AF39E3D07B63CEF /* Pods-SeamlessSlideUpScrollViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeamlessSlideUpScrollViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SeamlessSlideUpScrollViewDemo/Pods-SeamlessSlideUpScrollViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D0CA365B8D6D4A447A103E3C /* Pods_SeamlessSlideUpScrollViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeamlessSlideUpScrollViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -47,6 +51,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				83A427D6AD3F59AA9C9CE914 /* Pods_SeamlessSlideUpScrollViewDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A98B72221DB761A1008E3771 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				A9894EB11D06CEE500D80F68 /* SeamlessSlideUpScrollViewSample */,
+				A98B72271DB761A1008E3771 /* SeamlessSlideUpScrollView */,
 				A9894EB01D06CEE500D80F68 /* Products */,
 				95F9A5E169C3859BE9C7E6F6 /* Pods */,
 				B434DA3CF72DDEB3E4C16783 /* Frameworks */,
@@ -76,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				A9894EAF1D06CEE500D80F68 /* SeamlessSlideUpScrollViewDemo.app */,
+				A98B72261DB761A1008E3771 /* SeamlessSlideUpScrollView.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -93,6 +106,15 @@
 			path = SeamlessSlideUpScrollViewSample;
 			sourceTree = "<group>";
 		};
+		A98B72271DB761A1008E3771 /* SeamlessSlideUpScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				A98B72281DB761A1008E3771 /* SeamlessSlideUpScrollView.h */,
+				A98B72291DB761A1008E3771 /* Info.plist */,
+			);
+			path = SeamlessSlideUpScrollView;
+			sourceTree = "<group>";
+		};
 		B434DA3CF72DDEB3E4C16783 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +124,17 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		A98B72231DB761A1008E3771 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A98B722A1DB761A1008E3771 /* SeamlessSlideUpScrollView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		A9894EAE1D06CEE500D80F68 /* SeamlessSlideUpScrollViewDemo */ = {
@@ -125,6 +158,24 @@
 			productReference = A9894EAF1D06CEE500D80F68 /* SeamlessSlideUpScrollViewDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		A98B72251DB761A1008E3771 /* SeamlessSlideUpScrollView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A98B722D1DB761A1008E3771 /* Build configuration list for PBXNativeTarget "SeamlessSlideUpScrollView" */;
+			buildPhases = (
+				A98B72211DB761A1008E3771 /* Sources */,
+				A98B72221DB761A1008E3771 /* Frameworks */,
+				A98B72231DB761A1008E3771 /* Headers */,
+				A98B72241DB761A1008E3771 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SeamlessSlideUpScrollView;
+			productName = SeamlessSlideUpScrollView;
+			productReference = A98B72261DB761A1008E3771 /* SeamlessSlideUpScrollView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -139,6 +190,11 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = XH2F8QV9GT;
 						LastSwiftMigration = 0800;
+					};
+					A98B72251DB761A1008E3771 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = XH2F8QV9GT;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -156,6 +212,7 @@
 			projectRoot = "";
 			targets = (
 				A9894EAE1D06CEE500D80F68 /* SeamlessSlideUpScrollViewDemo */,
+				A98B72251DB761A1008E3771 /* SeamlessSlideUpScrollView */,
 			);
 		};
 /* End PBXProject section */
@@ -168,6 +225,13 @@
 				A96C2A6B1DB7375B00529407 /* LaunchScreen.storyboard in Resources */,
 				A96C2A641DB7375400529407 /* Assets.xcassets in Resources */,
 				A96C2A6C1DB7375B00529407 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A98B72241DB761A1008E3771 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +292,13 @@
 			files = (
 				A96C2A661DB7375400529407 /* ViewController.swift in Sources */,
 				A96C2A631DB7375400529407 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A98B72211DB761A1008E3771 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +451,57 @@
 			};
 			name = Release;
 		};
+		A98B722B1DB761A1008E3771 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = XH2F8QV9GT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SeamlessSlideUpScrollView/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oo-v.SeamlessSlideUpScrollView";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A98B722C1DB761A1008E3771 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = XH2F8QV9GT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = SeamlessSlideUpScrollView/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.oo-v.SeamlessSlideUpScrollView";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -400,6 +522,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		A98B722D1DB761A1008E3771 /* Build configuration list for PBXNativeTarget "SeamlessSlideUpScrollView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A98B722B1DB761A1008E3771 /* Debug */,
+				A98B722C1DB761A1008E3771 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
