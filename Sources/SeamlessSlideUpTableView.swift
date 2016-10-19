@@ -8,14 +8,14 @@
 
 import UIKit
 
-public class SeamlessSlideUpTableView: UITableView, SeamlessSlideUpScrollViewType {
+open class SeamlessSlideUpTableView: UITableView, SeamlessSlideUpScrollViewType {
     
-    var translationSize: CGSize = CGSizeZero
+    var translationSize: CGSize = CGSize.zero
     var ignoreContentOffsetChange: Bool = false
 
-    private var originalContentOffset: CGPoint = CGPointZero
+    fileprivate var originalContentOffset: CGPoint = CGPoint.zero
 
-    override public var contentOffset: CGPoint {
+    override open var contentOffset: CGPoint {
         get { return super.contentOffset }
         
         set {
@@ -25,26 +25,26 @@ public class SeamlessSlideUpTableView: UITableView, SeamlessSlideUpScrollViewTyp
             let y: CGFloat
             if self.pauseScroll {
                 y = 0
-                super.contentOffset = CGPointZero
+                super.contentOffset = CGPoint.zero
             } else {
                 y = newValue.y + self.translationSize.height
-                super.contentOffset = CGPointMake(newValue.x + self.translationSize.width, y)
+                super.contentOffset = CGPoint(x: newValue.x + self.translationSize.width, y: y)
             }
             self.contentOffsetYChangedCallback?(y)
         }
         
     }
     
-    var contentOffsetYChangedCallback: (CGFloat -> Void)? = nil
+    var contentOffsetYChangedCallback: ((CGFloat) -> Void)? = nil
     
     var pauseScroll: Bool = false {
         didSet {
             if self.pauseScroll != oldValue {
                 self.showsVerticalScrollIndicator = !self.pauseScroll
                 if !pauseScroll {
-                    self.translationSize = CGSizeMake(-self.originalContentOffset.x, -self.originalContentOffset.y)
+                    self.translationSize = CGSize(width: -self.originalContentOffset.x, height: -self.originalContentOffset.y)
                     if self.contentOffset.y > 0 {
-                        super.contentOffset = CGPointZero
+                        super.contentOffset = CGPoint.zero
                     }
                 }
             }

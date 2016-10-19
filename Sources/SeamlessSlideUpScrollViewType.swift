@@ -10,7 +10,7 @@ import UIKit
 
 protocol SeamlessSlideUpScrollViewType: class {
     var contentOffset: CGPoint { get }
-    var contentOffsetYChangedCallback: (CGFloat -> Void)? { get set }
+    var contentOffsetYChangedCallback: ((CGFloat) -> Void)? { get set }
     var pauseScroll: Bool { get set }
     
     var translationSize: CGSize { get set }
@@ -22,7 +22,7 @@ protocol SeamlessSlideUpScrollViewType: class {
 
 extension SeamlessSlideUpScrollViewType where Self: UIScrollView {
     func resetScrollTranslation() {
-        self.translationSize = CGSizeZero
+        self.translationSize = CGSize.zero
     }
     
     func layoutSuperviewIfNeeded() {
@@ -30,7 +30,7 @@ extension SeamlessSlideUpScrollViewType where Self: UIScrollView {
         layoutSuperviewIfNeeded(superview)
     }
     
-    func layoutSuperviewIfNeeded(superview: UIView) {
+    func layoutSuperviewIfNeeded(_ superview: UIView) {
         self.ignoreContentOffsetChange = true
         superview.layoutIfNeeded()
         self.ignoreContentOffsetChange = false

@@ -12,43 +12,43 @@ import UIKit.UIGestureRecognizerSubclass
 
 protocol VerticalDragGestureRecognizerDelegate {
     func verticarDragBegan()
-    func verticalDragged(origin origin: CGPoint, moved: CGSize)
+    func verticalDragged(origin: CGPoint, moved: CGSize)
     func verticalDragCancelled()
-    func verticalDragFinished(origin origin: CGPoint, moved: CGSize, lastMove: CGSize, duration: NSTimeInterval)
+    func verticalDragFinished(origin: CGPoint, moved: CGSize, lastMove: CGSize, duration: TimeInterval)
 }
 
 class VerticalDragGestureRecognizer: UIGestureRecognizer {
     
     var touchSlop: CGFloat = 20 {  didSet { touchSlopSquare = touchSlop * touchSlop } }
 
-    private var touchSlopSquare: CGFloat = 20 * 20
+    fileprivate var touchSlopSquare: CGFloat = 20 * 20
 
     var dragEnabled: Bool = true
     var targetSubview: UIView? = nil
     
     var dragDelegate: VerticalDragGestureRecognizerDelegate? = nil
     
-    private var firstTouch: CGPoint = CGPointZero
-    private var dragging: Bool = false
-    private var prevMoved: CGSize = CGSizeZero
-    private var prevTimestamp: NSTimeInterval = 0
-    private var lastMove: CGSize = CGSizeZero
+    fileprivate var firstTouch: CGPoint = CGPoint.zero
+    fileprivate var dragging: Bool = false
+    fileprivate var prevMoved: CGSize = CGSize.zero
+    fileprivate var prevTimestamp: TimeInterval = 0
+    fileprivate var lastMove: CGSize = CGSize.zero
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent) {
-        super.touchesBegan(touches, withEvent: event)
-        self.state = .Possible
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent) {
+        super.touchesBegan(touches, with: event)
+        self.state = .possible
         
         if touches.count != 1 || !dragEnabled {
-            self.state = .Cancelled
+            self.state = .cancelled
             return
         }
         
         let touch = touches.first!
 
-        let point = touch.locationInView(self.view)
+        let point = touch.location(in: self.view)
 
-        if let targetSubview = self.targetSubview where !targetSubview.frame.contains(point) {
-            self.state = .Cancelled
+        if let targetSubview = self.targetSubview , !targetSubview.frame.contains(point) {
+            self.state = .cancelled
             return
         }
         
@@ -56,18 +56,18 @@ class VerticalDragGestureRecognizer: UIGestureRecognizer {
         firstTouch = point
     }
     
-    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent) {
-        super.touchesMoved(touches, withEvent: event)
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent) {
+        super.touchesMoved(touches, with: event)
         
         if touches.count != 1 || !dragEnabled {
             dragDidCancel()
         } else if let touch = touches.first {
-            let curPoint = touch.locationInView(self.view)
+            let curPoint = touch.location(in: self.view)
             let movedX = (curPoint.x - firstTouch.x)
             let movedY = (curPoint.y - firstTouch.y)
             
             if dragging {
-                dragDidChange(CGSizeMake(movedX, movedY))
+                dragDidChange(CGSize(width: movedX, height: movedY))
             } else {
                 let distanceX = abs(movedX)
                 let distanceY = abs(movedY)
@@ -86,16 +86,16 @@ class VerticalDragGestureRecognizer: UIGestureRecognizer {
         }
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent) {
-        super.touchesEnded(touches, withEvent: event)
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent) {
+        super.touchesEnded(touches, with: event)
         
         if dragging {
             if let touch = touches.first {
-                let curPoint = touch.locationInView(self.view)
+                let curPoint = touch.location(in: self.view)
                 let movedX = (curPoint.x - firstTouch.x)
                 let movedY = (curPoint.y - firstTouch.y)
                 
-                dragDidFinish(CGSizeMake(movedX, movedY))
+                dragDidFinish(CGSize(width: movedX, height: movedY))
             } else {
                 dragDidCancel()
             }
@@ -110,28 +110,28 @@ class VerticalDragGestureRecognizer: UIGestureRecognizer {
 
 extension VerticalDragGestureRecognizer {
     
-    private func dragDidBegin(origin: CGPoint) {
-        self.state = .Began
+    fileprivate func dragDidBegin(_ origin: CGPoint) {
+        self.state = .began
         dragging = true
         firstTouch = origin
-        prevMoved = CGSizeZero
-        prevTimestamp = NSDate().timeIntervalSince1970
+        prevMoved = CGSize.zero
+        prevTimestamp = Date().timeIntervalSince1970
         dragDelegate?.verticarDragBegan()
     }
     
-    private func dragDidChange(moved: CGSize) {
+    fileprivate func dragDidChange(_ moved: CGSize) {
         if dragging {
-            self.state = .Changed
-            lastMove = CGSizeMake(moved.width - prevMoved.width, moved.height - prevMoved.height)
+            self.state = .changed
+            lastMove = CGSize(width: moved.width - prevMoved.width, height: moved.height - prevMoved.height)
             prevMoved = moved
-            prevTimestamp = NSDate().timeIntervalSince1970
+            prevTimestamp = Date().timeIntervalSince1970
             
             dragDelegate?.verticalDragged(origin: firstTouch, moved: moved)
         }
     }
     
-    private func dragDidCancel() {
-        self.state = .Cancelled
+    fileprivate func dragDidCancel() {
+        self.state = .cancelled
         
         if dragging {
             dragDelegate?.verticalDragCancelled()
@@ -139,14 +139,14 @@ extension VerticalDragGestureRecognizer {
         }
     }
     
-    private func dragDidFinish(moved: CGSize) {
-        self.state = .Ended
+    fileprivate func dragDidFinish(_ moved: CGSize) {
+        self.state = .ended
         
         if dragging {
             dragDelegate?.verticalDragFinished(origin: firstTouch,
                                                moved: moved,
                                                lastMove: lastMove,
-                                               duration: NSDate().timeIntervalSince1970 - prevTimestamp)
+                                               duration: Date().timeIntervalSince1970 - prevTimestamp)
             dragging = false
         }
     }

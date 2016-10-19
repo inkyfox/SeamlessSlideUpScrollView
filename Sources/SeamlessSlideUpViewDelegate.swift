@@ -10,13 +10,13 @@ import UIKit
 
 @objc public protocol SeamlessSlideUpViewDelegate {
 
-    optional func slideUpViewWillAppear(slideUpView: SeamlessSlideUpView, height: CGFloat)
-    optional func slideUpViewDidAppear(slideUpView: SeamlessSlideUpView, height: CGFloat)
+    @objc optional func slideUpViewWillAppear(_ slideUpView: SeamlessSlideUpView, height: CGFloat)
+    @objc optional func slideUpViewDidAppear(_ slideUpView: SeamlessSlideUpView, height: CGFloat)
     
-    optional func slideUpViewWillDisappear(slideUpView: SeamlessSlideUpView)
-    optional func slideUpViewDidDisappear(slideUpView: SeamlessSlideUpView)
+    @objc optional func slideUpViewWillDisappear(_ slideUpView: SeamlessSlideUpView)
+    @objc optional func slideUpViewDidDisappear(_ slideUpView: SeamlessSlideUpView)
     
-    optional func slideUpViewDidDrag(slideUpView: SeamlessSlideUpView, height: CGFloat)
+    @objc optional func slideUpViewDidDrag(_ slideUpView: SeamlessSlideUpView, height: CGFloat)
 }
 
 

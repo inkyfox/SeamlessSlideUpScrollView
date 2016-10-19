@@ -358,7 +358,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SeamlessSlideUpScrollViewDemo/SeamlessSlideUpScrollViewDemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -376,7 +376,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.oo-v.ios.SeamlessSlideUpScrollView.Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "SeamlessSlideUpScrollViewDemo/SeamlessSlideUpScrollViewDemo-Bridging-Header.h";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
