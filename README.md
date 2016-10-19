@@ -1,22 +1,9 @@
 # SeamlessSlideUpScrollView
-
-[![Platform](http://img.shields.io/badge/platform-ios-blue.svg?style=flat
-)](https://developer.apple.com/iphone/index.action)
-[![Language](http://img.shields.io/badge/language-swift-brightgreen.svg?style=flat
-)](https://developer.apple.com/swift)
-
-###CocoaPods
-~~~
-platform :ios, '9.0'
-use_frameworks!
-
-pod 'SeamlessSlideUpScrollView'
-~~~
-
-###Requirements
-* iOS 8.0
-* Xcode 7.3.1
-* Swift 2.2
+![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg)
+![Swift](https://img.shields.io/badge/Swift-2.3-orange.svg)
+[![Version](https://img.shields.io/cocoapods/v/SeamlessSlideUpScrollView.svg?style=flat)](http://cocoapods.org/pods/SeamlessSlideUpScrollView)
+[![License](https://img.shields.io/cocoapods/l/SeamlessSlideUpScrollView.svg?style=flat)](http://cocoapods.org/pods/SeamlessSlideUpScrollView)
+[![Platform](https://img.shields.io/cocoapods/p/SeamlessSlideUpScrollView.svg?style=flat)](http://cocoapods.org/pods/SeamlessSlideUpScrollView)
 
 ###Screen Shots
 Slide Up | Seamless Edge Dragg & Scroll | Slide Down after Scroll
@@ -71,10 +58,24 @@ extension ViewController: SeamlessSlideUpViewDelegate {
 * `SeamlessSlideUpView` must be added and cover on top of the all views.
 * `SeamlessSlideUpTableView` need not be attached to any superview. It'll be automatically added to `SeamlessSlideUpView`.
 
+## Installation
 
-###License
-SeamlessSlideUpScrollView is released under the MIT license. See LICENSE for details.
+### CocoaPods
 
-[screen_slideup]: https://raw.githubusercontent.com/inkyfox/SeamlessSlideUpScrollView/master/screenshot0.gif
-[screen_edge]: https://raw.githubusercontent.com/inkyfox/SeamlessSlideUpScrollView/master/screenshot1.gif
-[screen_slidedown]: https://raw.githubusercontent.com/inkyfox/SeamlessSlideUpScrollView/master/screenshot2.gif
+#### Swift 3
+```Ruby
+pod 'SeamlessSlideUpScrollView'
+```
+
+#### Swift 2.3
+```Ruby
+pod 'SeamlessSlideUpScrollView' => '~>1'
+```
+
+## License
+
+MIT
+
+[screen_slideup]: https://raw.githubusercontent.com/inkyfox/SeamlessSlideUpScrollView/master/screenshots/screenshot0.gif
+[screen_edge]: https://raw.githubusercontent.com/inkyfox/SeamlessSlideUpScrollView/master/screenshots/screenshot1.gif
+[screen_slidedown]: https://raw.githubusercontent.com/inkyfox/SeamlessSlideUpScrollView/master/screenshots/screenshot2.gif
