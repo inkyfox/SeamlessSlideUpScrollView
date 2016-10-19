@@ -1,0 +1,6 @@
+framework module SeamlessSlideUpScrollView {
+  umbrella header "SeamlessSlideUpScrollView-umbrella.h"
+
+  export *
+  module * { export * }
+}

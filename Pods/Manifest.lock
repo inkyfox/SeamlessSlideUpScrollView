@@ -1,0 +1,16 @@
+PODS:
+  - SeamlessSlideUpScrollView (1.1.0)
+
+DEPENDENCIES:
+  - SeamlessSlideUpScrollView (from `./`)
+
+EXTERNAL SOURCES:
+  SeamlessSlideUpScrollView:
+    :path: "./"
+
+SPEC CHECKSUMS:
+  SeamlessSlideUpScrollView: a7469b3c207d1650309955ba9267286bc87f8a92
+
+PODFILE CHECKSUM: baab7f215e0e52bca7c9d3cf12725c5e65e84de9
+
+COCOAPODS: 1.1.0.rc.3
