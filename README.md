@@ -1,6 +1,7 @@
 # SeamlessSlideUpScrollView
 ![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg)
 ![Swift](https://img.shields.io/badge/Swift-2.3-orange.svg)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Version](https://img.shields.io/cocoapods/v/SeamlessSlideUpScrollView.svg?style=flat)](http://cocoapods.org/pods/SeamlessSlideUpScrollView)
 [![License](https://img.shields.io/cocoapods/l/SeamlessSlideUpScrollView.svg?style=flat)](http://cocoapods.org/pods/SeamlessSlideUpScrollView)
 [![Platform](https://img.shields.io/cocoapods/p/SeamlessSlideUpScrollView.svg?style=flat)](http://cocoapods.org/pods/SeamlessSlideUpScrollView)
@@ -70,6 +71,11 @@ pod 'SeamlessSlideUpScrollView'
 #### Swift 2.3
 ```Ruby
 pod 'SeamlessSlideUpScrollView' => '~>1'
+```
+
+### Carthage
+```
+github "inkyfox/SeamlessSlideUpScrollView"
 ```
 
 ## License
