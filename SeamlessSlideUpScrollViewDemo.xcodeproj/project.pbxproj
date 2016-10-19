@@ -14,6 +14,12 @@
 		A96C2A6B1DB7375B00529407 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A96C2A671DB7375B00529407 /* LaunchScreen.storyboard */; };
 		A96C2A6C1DB7375B00529407 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A96C2A691DB7375B00529407 /* Main.storyboard */; };
 		A98B722A1DB761A1008E3771 /* SeamlessSlideUpScrollView.h in Headers */ = {isa = PBXBuildFile; fileRef = A98B72281DB761A1008E3771 /* SeamlessSlideUpScrollView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A9DD86241DB77FFB0077BE87 /* SeamlessSlideUpScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD861E1DB77FFB0077BE87 /* SeamlessSlideUpScrollView.swift */; };
+		A9DD86251DB77FFB0077BE87 /* SeamlessSlideUpScrollViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD861F1DB77FFB0077BE87 /* SeamlessSlideUpScrollViewType.swift */; };
+		A9DD86261DB77FFB0077BE87 /* SeamlessSlideUpTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD86201DB77FFB0077BE87 /* SeamlessSlideUpTableView.swift */; };
+		A9DD86271DB77FFB0077BE87 /* SeamlessSlideUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD86211DB77FFB0077BE87 /* SeamlessSlideUpView.swift */; };
+		A9DD86281DB77FFB0077BE87 /* SeamlessSlideUpViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD86221DB77FFB0077BE87 /* SeamlessSlideUpViewDelegate.swift */; };
+		A9DD86291DB77FFB0077BE87 /* VerticalDragGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9DD86231DB77FFB0077BE87 /* VerticalDragGestureRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,6 +47,12 @@
 		A98B72261DB761A1008E3771 /* SeamlessSlideUpScrollView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SeamlessSlideUpScrollView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A98B72281DB761A1008E3771 /* SeamlessSlideUpScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SeamlessSlideUpScrollView.h; sourceTree = "<group>"; };
 		A98B72291DB761A1008E3771 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9DD861E1DB77FFB0077BE87 /* SeamlessSlideUpScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeamlessSlideUpScrollView.swift; path = Sources/SeamlessSlideUpScrollView.swift; sourceTree = SOURCE_ROOT; };
+		A9DD861F1DB77FFB0077BE87 /* SeamlessSlideUpScrollViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeamlessSlideUpScrollViewType.swift; path = Sources/SeamlessSlideUpScrollViewType.swift; sourceTree = SOURCE_ROOT; };
+		A9DD86201DB77FFB0077BE87 /* SeamlessSlideUpTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeamlessSlideUpTableView.swift; path = Sources/SeamlessSlideUpTableView.swift; sourceTree = SOURCE_ROOT; };
+		A9DD86211DB77FFB0077BE87 /* SeamlessSlideUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeamlessSlideUpView.swift; path = Sources/SeamlessSlideUpView.swift; sourceTree = SOURCE_ROOT; };
+		A9DD86221DB77FFB0077BE87 /* SeamlessSlideUpViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SeamlessSlideUpViewDelegate.swift; path = Sources/SeamlessSlideUpViewDelegate.swift; sourceTree = SOURCE_ROOT; };
+		A9DD86231DB77FFB0077BE87 /* VerticalDragGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VerticalDragGestureRecognizer.swift; path = Sources/VerticalDragGestureRecognizer.swift; sourceTree = SOURCE_ROOT; };
 		ABF34FD88AF39E3D07B63CEF /* Pods-SeamlessSlideUpScrollViewDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SeamlessSlideUpScrollViewDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SeamlessSlideUpScrollViewDemo/Pods-SeamlessSlideUpScrollViewDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		D0CA365B8D6D4A447A103E3C /* Pods_SeamlessSlideUpScrollViewDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SeamlessSlideUpScrollViewDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -109,6 +121,12 @@
 		A98B72271DB761A1008E3771 /* SeamlessSlideUpScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				A9DD861E1DB77FFB0077BE87 /* SeamlessSlideUpScrollView.swift */,
+				A9DD861F1DB77FFB0077BE87 /* SeamlessSlideUpScrollViewType.swift */,
+				A9DD86201DB77FFB0077BE87 /* SeamlessSlideUpTableView.swift */,
+				A9DD86211DB77FFB0077BE87 /* SeamlessSlideUpView.swift */,
+				A9DD86221DB77FFB0077BE87 /* SeamlessSlideUpViewDelegate.swift */,
+				A9DD86231DB77FFB0077BE87 /* VerticalDragGestureRecognizer.swift */,
 				A98B72281DB761A1008E3771 /* SeamlessSlideUpScrollView.h */,
 				A98B72291DB761A1008E3771 /* Info.plist */,
 			);
@@ -194,6 +212,7 @@
 					A98B72251DB761A1008E3771 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = XH2F8QV9GT;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -299,6 +318,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9DD86241DB77FFB0077BE87 /* SeamlessSlideUpScrollView.swift in Sources */,
+				A9DD86261DB77FFB0077BE87 /* SeamlessSlideUpTableView.swift in Sources */,
+				A9DD86281DB77FFB0077BE87 /* SeamlessSlideUpViewDelegate.swift in Sources */,
+				A9DD86291DB77FFB0077BE87 /* VerticalDragGestureRecognizer.swift in Sources */,
+				A9DD86271DB77FFB0077BE87 /* SeamlessSlideUpView.swift in Sources */,
+				A9DD86251DB77FFB0077BE87 /* SeamlessSlideUpScrollViewType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +479,7 @@
 		A98B722B1DB761A1008E3771 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_IDENTITY = "";
@@ -471,6 +497,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -480,6 +507,7 @@
 		A98B722C1DB761A1008E3771 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CODE_SIGN_IDENTITY = "";
